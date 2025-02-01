@@ -1,0 +1,23 @@
+version: '3'
+services:
+  mysql:
+    image: mahiketh/mysql:v1
+    container_name: mysql
+    volumes: 
+    - mysql:/var/lib/mysql
+  backend:
+    image: mahiketh/backend:v1
+    container_name: backend
+    depends_on:
+    - mysql
+  frontend:
+    image: mahiketh/frontend:v1
+    container_name: frontend
+    ports:
+    - 80:80
+    depends_on:
+    - backend
+volumes:
+  mysql:
+networks:
+  expense:
