@@ -9,4 +9,5 @@ WORKDIR /opt/server
 COPY code .
 RUN npm install
 USER expense
+RUN echo "hello"
 CMD ["node", "index.js"]
