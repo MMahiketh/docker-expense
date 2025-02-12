@@ -1,5 +1,4 @@
 FROM nginx:alpine3.21-slim
-EXPOSE 80
 RUN rm -rf /etc/nginx/conf.d/default.conf \
     && mkdir -p /var/cache/nginx/client_temp \
     && mkdir -p /var/cache/nginx/proxy_temp \
